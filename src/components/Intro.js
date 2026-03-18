@@ -29,40 +29,43 @@ const Box = styled(motion.div)`
     z-index: 1;
 `
 
+// أزلنا align-items: flex-end لكي لا ينزل النص للأسفل
 const SubBox = styled.div`
     width: 50%;
     position: relative;
     display: flex;
-    justify-content: center; /* سنستخدمها لتوسيط الصورة */
-    align-items: flex-end; /* لضبط محاذاة الصورة في الأسفل */
+    justify-content: center;
+    flex-direction: column; /* لترتيب النصوص بشكل عمودي مريح */
 `
 
-const Text = styled.div`
+const TextLeft = styled.div`
     font-size: calc(1em + 1.5vw);
     color: ${props => props.theme.body};
     padding: 2rem;
-    cursor: pointer;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    z-index: 3;
 `
 
 const TextRight = styled.div`
     font-size: calc(0.5rem + 1.5vw);
-    color: ${props => `rgba(${props.theme.bodyRgba},0.6)` };
+    color: ${props => props.theme.text};
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
     font-weight: 300;
+    z-index: 3;
 `
 
-// حاوية جديدة للصورة للتحكم بتموضعها المنفصل
+// الحاوية المستقلة للصورة لتبقى في الأسفل دائماً
 const ImageContainer = styled(motion.div)`
     position: absolute;
-    bottom: 0;
+    bottom: 0; /* تثبيت الصورة في الأسفل */
     left: 50%;
     transform: translate(-50%, 0);
-    width: 40%; // يمكنك ضبط الحجم كما تريد
+    width: 40%; /* يمكنك تعديل العرض لتكبير أو تصغير الصورة */
     height: auto;
-    z-index: 2; // تأكد من أنها فوق الخلفية ولكن تحت النصوص إن لزم الأمر
+    z-index: 2;
 
     .pic {
         width: 100%;
@@ -78,13 +81,12 @@ const Intro = () => {
         transition={{ type: 'spring', duration:2, delay:1 }}
         >
             <SubBox>
-                <Text>
+                <TextLeft>
                     <h1>Hi,</h1>
                     <h3>I'm Carlos Michel.</h3>
-                </Text>
+                </TextLeft>
             </SubBox>
             
-            {/* فصلنا الصورة عن الـ SubBox الأيمن لنقلها للأسفل في المنتصف */}
             <ImageContainer
                 initial={{opacity:0}}
                 animate={{opacity: 1}}
@@ -94,12 +96,9 @@ const Intro = () => {
             </ImageContainer>
             
             <SubBox>
-                <Text>
-                    {/* يمكنك نقل النص الأيمن هنا إذا أردت */}
-                    <TextRight>
-                        <h6>I am a programmer and a trader in the crypto market.</h6>
-                    </TextRight>
-                </Text>
+                <TextRight>
+                    <h6>I am a programmer and a trader in the crypto market.</h6>
+                </TextRight>
             </SubBox>
         </Box>
     )
