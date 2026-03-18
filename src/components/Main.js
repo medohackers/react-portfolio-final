@@ -7,6 +7,7 @@ import PowerButton from '../subComponents/PowerButton'
 import SocialIcons from '../subComponents/SocialIcons'
 import { YinYang } from './AllSvgs'
 import Intro from './Intro'
+;
 
 
 const MainContainer = styled.div`
@@ -14,6 +15,7 @@ background: ${props => props.theme.body};
 width: 100vw;
 height: 100vh;
 overflow:hidden;
+
 position: relative;
 
 h2,h3,h4,h5,h6{
@@ -33,11 +35,6 @@ top: 2rem;
 right: calc(1rem + 2vw);
 text-decoration: none;
 z-index:1;
-
-/* التعديل هنا: يغير لون Say hi للموبايل لما نضغط كليك */
-@media (max-width: 768px) {
-    color: ${props => props.click ? props.theme.body : props.theme.text};
-}
 `
 const BLOG = styled(NavLink)`
 color: ${props => props.theme.text};
@@ -50,17 +47,13 @@ z-index:1;
 `
 const WORK = styled(NavLink)`
 color: ${props => props.click ? props.theme.body : props.theme.text};
+
 position: absolute;
 top: 50%;
 left: calc(1rem + 2vw);
 transform: translate(-50%, -50%) rotate(-90deg) ;
 text-decoration: none;
 z-index:1;
-
-/* تعديل لون الكلمة في الموبايل عشان تظهر بشكل واضح مع التقسيمة الجديدة */
-@media (max-width: 768px) {
-    color: ${props => props.theme.text};
-}
 `
 
 const BottomBar = styled.div`
@@ -75,8 +68,7 @@ justify-content: space-evenly;
 `
 
 const ABOUT = styled(NavLink)`
-/* التعديل هنا: خلينا اللون ثابت على لون النص الأساسي ومبيتأثرش بالكليك */
-color: ${props => props.theme.text};
+color: ${props => props.click ? props.theme.body : props.theme.text};
 text-decoration: none;
 z-index:1;
 `
@@ -119,38 +111,18 @@ transition: all 1s ease;
     display: ${props => props.click ? 'none' :'inline-block'  };
     padding-top: 1rem;
 }
-
-/* تظبيط مكان وحجم الأيقونة في شاشات الموبايل */
-@media (max-width: 768px) {
-    top: ${props => props.click ? '90%' :'50%'  };
-    left: ${props => props.click ? '90%' :'50%'  };
-    
-    /* تصغير حجم أيقونة الـ YinYang */
-    &>:first-child {
-        width: ${props => props.click ? '60px' :'120px'};
-        height: ${props => props.click ? '60px' :'120px'};
-    }
-}
 `
 
+// تم التعديل على هذا الجزء فقط لجعل اللون الأسود بالأعلى والأبيض بالأسفل
 const DarkDiv = styled.div`
 position: absolute;
 top: 0;
+left: 0;
 background-color: #000;
-bottom: 0;
-right: 50%;
-width: ${props => props.click ? '50%' : '0%'};
-height: ${props => props.click ? '100%' : '0%'};
+width: ${props => props.click ? '100%' : '0%'};
+height: ${props => props.click ? '50%' : '0%'};
 z-index:1;
-transition: height 0.5s ease, width 1s ease 0.5s;
-
-/* التعديل الأساسي: التقسيم بالعرض للموبايل (نص الشاشة اللي فوق أسود) */
-@media (max-width: 768px) {
-    right: 0;
-    width: ${props => props.click ? '100%' : '0%'};
-    height: ${props => props.click ? '50%' : '0%'};
-    transition: width 0.5s ease, height 1s ease 0.5s;
-}
+transition: width 0.5s ease, height 1s ease 0.5s;
 `
 
 
@@ -162,7 +134,7 @@ const Main = () => {
 
     return (
         <MainContainer>
-         <DarkDiv click={click}/>
+         <DarkDiv   click={click}/>
             <Container>
             <PowerButton />
             <LogoComponent theme={click ? 'dark' :'light'}/>
@@ -173,21 +145,33 @@ const Main = () => {
                 <span>click here</span>
             </Center>
 
-            {/* تم إضافة الكليك هنا عشان يسمع في ستايل الـ Contact */}
-            <Contact target="_blank" href="mailto:codebucks27@gmail.com" click={+click}>
+            <Contact target="_blank" href="mailto:codebucks27@gmail.com">
                 <motion.h2
-                initial={{ y:-200, transition: { type:'spring', duration: 1.5, delay:1} }}
-                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
+                
                 >
                     Say hi..
                 </motion.h2>
             </Contact>
             <BLOG to="/blog">
                 <motion.h2
-                initial={{ y:-200, transition: { type:'spring', duration: 1.5, delay:1} }}
-                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
@@ -196,8 +180,14 @@ const Main = () => {
             </BLOG>
             <WORK to="/work" click={+click}>
                 <motion.h2
-                initial={{ y:-200, transition: { type:'spring', duration: 1.5, delay:1} }}
-                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
                  whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
@@ -205,11 +195,16 @@ const Main = () => {
                 </motion.h2>
             </WORK>
             <BottomBar>
-            {/* كلمة About مفيهاش click prop بقى عشان تفضل ثابتة */}
-            <ABOUT to="/about">
+            <ABOUT to="/about" click={+click}>
                 <motion.h2
-                initial={{ y:200, transition: { type:'spring', duration: 1.5, delay:1} }}
-                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
+                initial={{
+                    y:200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
                  whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
@@ -218,8 +213,14 @@ const Main = () => {
             </ABOUT>
             <SKILLS to="/skills">
                 <motion.h2
-                initial={{ y:200, transition: { type:'spring', duration: 1.5, delay:1} }}
-                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
+                initial={{
+                    y:200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
                  whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
