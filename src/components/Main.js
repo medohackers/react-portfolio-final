@@ -115,10 +115,10 @@ transition: all 1s ease;
 
 const DarkDiv = styled.div`
 position: absolute;
-top: 0;
+top: 50%;
 background-color: #000;
 bottom: 0;
-right: 50%;
+right:  0;
 width: ${props => props.click ? '50%' : '0%'};
 height: ${props => props.click ? '100%' : '0%'};
 z-index:1;
