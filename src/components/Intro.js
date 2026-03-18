@@ -33,36 +33,36 @@ const SubBox = styled.div`
     width: 50%;
     position: relative;
     display: flex;
-    align-items: center; /* لضبط العناصر في المنتصف عمودياً */
+    justify-content: center; /* سنستخدمها لتوسيط الصورة */
+    align-items: flex-end; /* لضبط محاذاة الصورة في الأسفل */
 `
 
-const TextLeft = styled.div`
+const Text = styled.div`
     font-size: calc(1em + 1.5vw);
     color: ${props => props.theme.body};
     padding: 2rem;
+    cursor: pointer;
+
     display: flex;
     flex-direction: column;
-    z-index: 3;
+    justify-content: space-evenly;
 `
 
 const TextRight = styled.div`
     font-size: calc(0.5rem + 1.5vw);
-    color: ${props => props.theme.text}; /* تم استخدام عكس اللون ليكون مرئياً في الجانب الأيمن */
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+    color: ${props => `rgba(${props.theme.bodyRgba},0.6)` };
     font-weight: 300;
-    z-index: 3;
 `
 
+// حاوية جديدة للصورة للتحكم بتموضعها المنفصل
 const ImageContainer = styled(motion.div)`
     position: absolute;
+    bottom: 0;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 40%; /* يمكنك زيادة أو تقليل هذه النسبة لتكبير/تصغير الصورة كما تحب */
+    transform: translate(-50%, 0);
+    width: 40%; // يمكنك ضبط الحجم كما تريد
     height: auto;
-    z-index: 2; /* وضعنا الصورة في المنتصف تماماً فوق الخلفية وتحت النصوص */
+    z-index: 2; // تأكد من أنها فوق الخلفية ولكن تحت النصوص إن لزم الأمر
 
     .pic {
         width: 100%;
@@ -78,12 +78,13 @@ const Intro = () => {
         transition={{ type: 'spring', duration:2, delay:1 }}
         >
             <SubBox>
-                <TextLeft>
+                <Text>
                     <h1>Hi,</h1>
                     <h3>I'm Carlos Michel.</h3>
-                </TextLeft>
+                </Text>
             </SubBox>
-
+            
+            {/* فصلنا الصورة عن الـ SubBox الأيمن لنقلها للأسفل في المنتصف */}
             <ImageContainer
                 initial={{opacity:0}}
                 animate={{opacity: 1}}
@@ -91,11 +92,14 @@ const Intro = () => {
             >
                 <img className="pic" src={Me} alt="Profile Pic" />
             </ImageContainer>
-
+            
             <SubBox>
-                <TextRight>
-                    <h6>I am a programmer and a trader in the crypto market.</h6>
-                </TextRight>
+                <Text>
+                    {/* يمكنك نقل النص الأيمن هنا إذا أردت */}
+                    <TextRight>
+                        <h6>I am a programmer and a trader in the crypto market.</h6>
+                    </TextRight>
+                </Text>
             </SubBox>
         </Box>
     )
