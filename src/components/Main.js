@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+widthtion } from 'framer-motion'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
@@ -122,7 +122,7 @@ right:  0;
 width: ${props => props.click ? '50%' : '0%'};
 height: ${props => props.click ? '100%' : '0%'};
 z-index:1;
-transition: height 0.5s ease, width 1s ease 0.5s;
+transition: height 0.5s ease, width 0.5s ease 1s;
 `
 
 
