@@ -48,7 +48,7 @@ const TextLeft = styled.div`
 `
 
 const TextRight = styled.div`
-    font-size: calc(1rem + 1.5vw);
+    font-size: calc(1rem + 2vw);
     color: ${props => props.theme.text};
     padding: 2rem;
     display: flex;
