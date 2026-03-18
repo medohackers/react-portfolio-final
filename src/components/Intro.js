@@ -48,7 +48,7 @@ const TextLeft = styled.div`
 `
 
 const TextRight = styled.div`
-    font-size: calc(0.5rem + 1.5vw);
+    font-size: calc(1rem + 1.5vw);
     color: ${props => props.theme.text};
     padding: 2rem;
     display: flex;
@@ -97,7 +97,7 @@ const Intro = () => {
             
             <SubBox>
                 <TextRight>
-                    <h1>I am a tradertrader in the crypto market.</h1>
+                    <h6>I am a programmer and a trader in the crypto market.</h6>
                 </TextRight>
             </SubBox>
         </Box>
