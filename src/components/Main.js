@@ -33,6 +33,11 @@ top: 2rem;
 right: calc(1rem + 2vw);
 text-decoration: none;
 z-index:1;
+
+/* التعديل هنا: يغير لون Say hi للموبايل لما نضغط كليك */
+@media (max-width: 768px) {
+    color: ${props => props.click ? props.theme.body : props.theme.text};
+}
 `
 const BLOG = styled(NavLink)`
 color: ${props => props.theme.text};
@@ -70,7 +75,8 @@ justify-content: space-evenly;
 `
 
 const ABOUT = styled(NavLink)`
-color: ${props => props.click ? props.theme.body : props.theme.text};
+/* التعديل هنا: خلينا اللون ثابت على لون النص الأساسي ومبيتأثرش بالكليك */
+color: ${props => props.theme.text};
 text-decoration: none;
 z-index:1;
 `
@@ -167,7 +173,8 @@ const Main = () => {
                 <span>click here</span>
             </Center>
 
-            <Contact target="_blank" href="mailto:codebucks27@gmail.com">
+            {/* تم إضافة الكليك هنا عشان يسمع في ستايل الـ Contact */}
+            <Contact target="_blank" href="mailto:codebucks27@gmail.com" click={+click}>
                 <motion.h2
                 initial={{ y:-200, transition: { type:'spring', duration: 1.5, delay:1} }}
                 animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
@@ -198,7 +205,8 @@ const Main = () => {
                 </motion.h2>
             </WORK>
             <BottomBar>
-            <ABOUT to="/about" click={+click}>
+            {/* كلمة About مفيهاش click prop بقى عشان تفضل ثابتة */}
+            <ABOUT to="/about">
                 <motion.h2
                 initial={{ y:200, transition: { type:'spring', duration: 1.5, delay:1} }}
                 animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
