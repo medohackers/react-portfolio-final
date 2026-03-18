@@ -29,13 +29,13 @@ const Box = styled(motion.div)`
     z-index: 1;
 `
 
-// أزلنا align-items: flex-end لكي لا ينزل النص للأسفل
+// تم تعديل justify-content لرفع النص للأعلى
 const SubBox = styled.div`
     width: 50%;
     position: relative;
     display: flex;
-    justify-content: center;
-    flex-direction: column; /* لترتيب النصوص بشكل عمودي مريح */
+    justify-content: flex-start; /* التعديل هنا لرفع النص لفوق */
+    flex-direction: column; 
 `
 
 const TextLeft = styled.div`
@@ -57,13 +57,12 @@ const TextRight = styled.div`
     z-index: 3;
 `
 
-// الحاوية المستقلة للصورة لتبقى في الأسفل دائماً
 const ImageContainer = styled(motion.div)`
     position: absolute;
-    bottom: 0; /* تثبيت الصورة في الأسفل */
+    bottom: 0; 
     left: 50%;
     transform: translate(-50%, 0);
-    width: 60%; /* يمكنك تعديل العرض لتكبير أو تصغير الصورة */
+    width: 60%; 
     height: auto;
     z-index: 2;
 
