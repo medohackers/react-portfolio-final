@@ -63,7 +63,7 @@ const ImageContainer = styled(motion.div)`
     bottom: 0; /* تثبيت الصورة في الأسفل */
     left: 50%;
     transform: translate(-50%, 0);
-    width: 40%; /* يمكنك تعديل العرض لتكبير أو تصغير الصورة */
+    width: 60%; /* يمكنك تعديل العرض لتكبير أو تصغير الصورة */
     height: auto;
     z-index: 2;
 
@@ -97,7 +97,7 @@ const Intro = () => {
             
             <SubBox>
                 <TextRight>
-                    <h6>I am a programmer and a trader in the crypto market.</h6>
+                    <h1>I am a tradertrader in the crypto market.</h1>
                 </TextRight>
             </SubBox>
         </Box>
