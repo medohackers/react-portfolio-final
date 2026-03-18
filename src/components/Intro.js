@@ -27,8 +27,8 @@ background: linear-gradient(
     ${props => props.theme.text} 50%) top;
     background-repeat: no-repeat;
 background-size: 100% 2px;
-    border-left: 2px solid ${props => props.theme.body};
-    border-right: 2px solid ${props => props.theme.text};
+    border-top: 2px solid ${props => props.theme.body};
+    border-botton: 2px solid ${props => props.theme.text};
 
 
     z-index:1;
