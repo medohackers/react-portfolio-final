@@ -72,11 +72,11 @@ const AboutPage = () => {
             <img src={astronaut} alt="spaceman" />
         </Spaceman>    
         <Main>
-        I'm a front-end developer located in India. I love to create simple yet beautiful websites with great user experience.
+        مرحبا انا كارلوس ميشيل مطور برامج ومصمم مواقع ويب احب البرمجه والعمل بها ولد شغف واسع للتطوير وتحويل الكلام لواقع مرئي وملموس من خلال بعض الاكواد البسيطه.
 <br /> <br/>
-I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer and blogger. I love to write blogs and read books.
+ايضا انا متداول ولدي خبره واسعه في سوق الأسهم والعملات الرقميه.
 <br/> <br/>
-I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.
+غير خبرتي في هذه المجالات لدي سابق معرفه في التعدين للعملات الشهيره مثل BTC و USDT و TON 
         </Main>
 
         <BigTitle text="ABOUT" top="10%" left="5%" />
