@@ -113,16 +113,16 @@ transition: all 1s ease;
 }
 `
 
-// تم التعديل على هذا الجزء فقط لجعل اللون الأسود بالأعلى والأبيض بالأسفل
 const DarkDiv = styled.div`
 position: absolute;
 top: 0;
-left: 0;
 background-color: #000;
-width: ${props => props.click ? '100%' : '0%'};
-height: ${props => props.click ? '50%' : '0%'};
+bottom: 0;
+right: 50%;
+width: ${props => props.click ? '50%' : '0%'};
+height: ${props => props.click ? '100%' : '0%'};
 z-index:1;
-transition: width 0.5s ease, height 1s ease 0.5s;
+transition: height 0.5s ease, width 1s ease 0.5s;
 `
 
 
