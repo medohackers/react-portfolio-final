@@ -1,4 +1,4 @@
-import React from 'react'
+importeact from 'react'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import Me from '../assets/Images/profile-img.png'
@@ -81,7 +81,7 @@ const Intro = () => {
                 <Text>
                     <h1>Hi,</h1>
                     <h3>I'm Carlos Michel.</h3>
-                    <h6>I den.</h6>
+                    <h6>I am a programmer and a trader in the crypto market.</h6>
                 </Text>
             </SubBox>
             <SubBox>
