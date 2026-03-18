@@ -96,7 +96,7 @@ const Intro = () => {
             
             <SubBox>
                 <TextRight>
-                    <h6>I am a programmer and a trader in the crypto market.</h6>
+                    <h6>𝑰 𝒂𝒎 𝒂 𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒎𝒆𝒓 𝒂𝒏𝒅 𝒂𝒕𝒓𝒂𝒅𝒆𝒓 𝒊𝒏 𝒕𝒉𝒆 𝒄𝒓𝒕𝒑𝒕𝒐 𝒎𝒂𝒓𝒌𝒆𝒕.</h6>
                 </TextRight>
             </SubBox>
         </Box>
