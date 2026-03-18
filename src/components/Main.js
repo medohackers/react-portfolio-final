@@ -7,7 +7,6 @@ import PowerButton from '../subComponents/PowerButton'
 import SocialIcons from '../subComponents/SocialIcons'
 import { YinYang } from './AllSvgs'
 import Intro from './Intro'
-;
 
 
 const MainContainer = styled.div`
@@ -15,7 +14,6 @@ background: ${props => props.theme.body};
 width: 100vw;
 height: 100vh;
 overflow:hidden;
-
 position: relative;
 
 h2,h3,h4,h5,h6{
@@ -47,13 +45,17 @@ z-index:1;
 `
 const WORK = styled(NavLink)`
 color: ${props => props.click ? props.theme.body : props.theme.text};
-
 position: absolute;
 top: 50%;
 left: calc(1rem + 2vw);
 transform: translate(-50%, -50%) rotate(-90deg) ;
 text-decoration: none;
 z-index:1;
+
+/* تعديل لون الكلمة في الموبايل عشان تظهر بشكل واضح مع التقسيمة الجديدة */
+@media (max-width: 768px) {
+    color: ${props => props.theme.text};
+}
 `
 
 const BottomBar = styled.div`
@@ -111,6 +113,18 @@ transition: all 1s ease;
     display: ${props => props.click ? 'none' :'inline-block'  };
     padding-top: 1rem;
 }
+
+/* تظبيط مكان وحجم الأيقونة في شاشات الموبايل */
+@media (max-width: 768px) {
+    top: ${props => props.click ? '90%' :'50%'  };
+    left: ${props => props.click ? '90%' :'50%'  };
+    
+    /* تصغير حجم أيقونة الـ YinYang */
+    &>:first-child {
+        width: ${props => props.click ? '60px' :'120px'};
+        height: ${props => props.click ? '60px' :'120px'};
+    }
+}
 `
 
 const DarkDiv = styled.div`
@@ -123,6 +137,14 @@ width: ${props => props.click ? '50%' : '0%'};
 height: ${props => props.click ? '100%' : '0%'};
 z-index:1;
 transition: height 0.5s ease, width 1s ease 0.5s;
+
+/* التعديل الأساسي: التقسيم بالعرض للموبايل (نص الشاشة اللي فوق أسود) */
+@media (max-width: 768px) {
+    right: 0;
+    width: ${props => props.click ? '100%' : '0%'};
+    height: ${props => props.click ? '50%' : '0%'};
+    transition: width 0.5s ease, height 1s ease 0.5s;
+}
 `
 
 
@@ -134,7 +156,7 @@ const Main = () => {
 
     return (
         <MainContainer>
-         <DarkDiv   click={click}/>
+         <DarkDiv click={click}/>
             <Container>
             <PowerButton />
             <LogoComponent theme={click ? 'dark' :'light'}/>
@@ -147,31 +169,18 @@ const Main = () => {
 
             <Contact target="_blank" href="mailto:codebucks27@gmail.com">
                 <motion.h2
-                initial={{
-                    y:-200,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
-                animate={{
-                    y:0,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
+                initial={{ y:-200, transition: { type:'spring', duration: 1.5, delay:1} }}
+                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
-                
                 >
                     Say hi..
                 </motion.h2>
             </Contact>
             <BLOG to="/blog">
                 <motion.h2
-                initial={{
-                    y:-200,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
-                animate={{
-                    y:0,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
+                initial={{ y:-200, transition: { type:'spring', duration: 1.5, delay:1} }}
+                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
@@ -180,14 +189,8 @@ const Main = () => {
             </BLOG>
             <WORK to="/work" click={+click}>
                 <motion.h2
-                initial={{
-                    y:-200,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
-                animate={{
-                    y:0,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
+                initial={{ y:-200, transition: { type:'spring', duration: 1.5, delay:1} }}
+                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
                  whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
@@ -197,14 +200,8 @@ const Main = () => {
             <BottomBar>
             <ABOUT to="/about" click={+click}>
                 <motion.h2
-                initial={{
-                    y:200,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
-                animate={{
-                    y:0,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
+                initial={{ y:200, transition: { type:'spring', duration: 1.5, delay:1} }}
+                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
                  whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
@@ -213,14 +210,8 @@ const Main = () => {
             </ABOUT>
             <SKILLS to="/skills">
                 <motion.h2
-                initial={{
-                    y:200,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
-                animate={{
-                    y:0,
-                    transition: { type:'spring', duration: 1.5, delay:1}
-                }}
+                initial={{ y:200, transition: { type:'spring', duration: 1.5, delay:1} }}
+                animate={{ y:0, transition: { type:'spring', duration: 1.5, delay:1} }}
                  whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
