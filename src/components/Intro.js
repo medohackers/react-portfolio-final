@@ -9,7 +9,7 @@ const Box = styled(motion.div)`
 position: absolute;
 left: 50%;
 top: 50%;
-transform: translate(-50%, -50%);
+transform: translate( 50%, 50%);
 
 
 width: 65vw;
@@ -22,7 +22,7 @@ background: linear-gradient(
     ${props => props.theme.body} 50%,
     ${props => props.theme.text} 50%) bottom,
     linear-gradient(
-    to top,
+    to right,
     ${props => props.theme.body} 50%,
     ${props => props.theme.text} 50%) top;
     background-repeat: no-repeat;
@@ -81,7 +81,7 @@ const Intro = () => {
                 <Text>
                     <h1>Hi,</h1>
                     <h3>I'm Carlos Michel.</h3>
-                    <h6>I design.</h6>
+                    <h6>I den.</h6>
                 </Text>
             </SubBox>
             <SubBox>
