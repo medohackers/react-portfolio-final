@@ -1,4 +1,4 @@
-importeact from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import Me from '../assets/Images/profile-img.png'
@@ -9,7 +9,7 @@ const Box = styled(motion.div)`
 position: absolute;
 left: 50%;
 top: 50%;
-transform: translate(-50%,-50%);
+transform: translate(-50%, -50%);
 
 
 width: 65vw;
