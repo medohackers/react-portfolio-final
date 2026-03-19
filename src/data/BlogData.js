@@ -27,11 +27,11 @@ export const Blogs = [
     },
     {
         id:4,
-        name:"How to build a Fabulous Todo App using React, Redux and Framer-Motion",
-        tags:["react","redux","framer-motion"],
-        date:"26 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--r5oUDhhT--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/036s7j5b73up7455rdth.png",
-        link:"https://dev.to/codebucks/build-redux-react-todo-list-app-with-animations-using-framer-motion-1mp1"
+        name:"السعر كان طالع وبعدين وصل مقاومة وبدأ تصحيح هابط.حصل كسر بسيط لتحت وبعدها ارتداد (حركة سيولة).حالياً عرضي، ولو كسر تحت يكمل هبوط، ولو رجع فوق المقاومة يصعد تاني.",
+        tags:["XAUUSD","GOLD","Trading"],
+        date:"7 Dec, 2025",
+        imgSrc:"https://files.catbox.moe/6lm65i.jpg",
+        link:""
     },
     {
         id:5,
