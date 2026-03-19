@@ -93,10 +93,10 @@ const MySkillsPage = () => {
 <ParticleComponent theme='light' />
             <Main>
 <Title>
-    <Design width={40} height={40} /> Designer
+    <Design width={40} height={40} /> Web Design
 </Title>
 <Description>
-I love to create design which speaks, Keep it clean, minimal and simple.
+أحب تصميم تصاميم تتحدث عن نفسها، مع الحرص على أن تكون نظيفة وبسيطة تلفت الانظار. 
 </Description>
 <Description>
 <strong>I like to Design</strong>
@@ -122,21 +122,15 @@ I love to create design which speaks, Keep it clean, minimal and simple.
             </Main>
             <Main>
 <Title>
-    <Develope width={40} height={40} /> Frontend Developer
+    <Develope width={40} height={40} /> Trading
 </Title>
 <Description>
-I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life.
-</Description>
-<Description>
-<strong>Skills</strong>
-<p>
-Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Firebase etc.
-</p>
+انا من عشاق مجال التداول ولدي خبره واسعه فيه وكيفيه دراسه الاسهم ومعرفه عمليات التداول الناجحه. 
 </Description>
 <Description>
 <strong>Tools</strong>
 <p>
-VScode, Github, Codepen etc.
+Stocks, Minerals, , Crypto, Tick Chart Trader, MT5, Bootstrap, Backtesting Platforms, Stock Screeners.
 </p>
 </Description>
 
