@@ -43,29 +43,29 @@ export const Blogs = [
     },
     {
         id:6,
-        name:"How to implement Pagination Component in React from scratch",
-        tags:["react","css"],
-        date:"5 Jan, 2021",
-        imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625240050668%2FGAya9b0XK.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        link:"https://codebucks.hashnode.dev/pagination-in-react"
+        name:"السعر كان في تجميع داخل مثلث مع وجود FVG تحت.\nحصل اختراق قوي لفوق (Breakout) من التجميع.\nحالياً الاتجاه صاعد، وأي رجوع للمنطقة البنفسجي ممكن فرصة شراء.",
+        tags:["XAUUSD","GOLD","Trading"],
+        date:"13 Nov, 2025",
+        imgSrc:"https://files.catbox.moe/s6aggi.jpg",
+        link:""
 
     },
    
     {
         id:7,
-        name:"What is Redux ? Simply Explained!",
-        tags:["react","redux","javascript"],
-        date:"16 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--ZY1EK-Eo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bcz1u90oq3prr5fga3fs.png",
-        link:"https://dev.to/codebucks/what-is-redux-simply-explained-2ch7"
+        name:"مؤشرات هبوط تم تحديدها مبكرا",
+        tags:["XAUUSD","GOLD","Trading"],
+        date:"18 Sep, 2025",
+        imgSrc:"https://files.catbox.moe/29y1ep.jpg",
+        link:""
     },
     {
         id:8,
-        name:"How to create Sidebar navigation menu in ReactJS with react router and framer-motion",
-        tags:["react","framer-motion","styled-components"],
-        date:"26 May, 2021",
-        imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--rv4I8UwE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0a9h50milhlf1us6mn4a.png",
-        link:"https://dev.to/codebucks/build-sidebar-navigation-menu-in-reactjs-with-react-router-and-framer-motion-for-cool-page-transition-effects-4bc3"
+        name:"التحليل يوضح اتجاهًا هابطًا بعد ارتداد السعر من فجوة سعرية (FVG) ومنطقة عرض علوية عند الموجة (B).\nتعتمد الرؤية على سحب السيولة من القمم واستهداف كسر القاع الأخير (C) للوصول إلى منطقة الطلب السفلية.\nالهدف المتوقع للحركة الحالية هو مستويات 3,643 تقريبًا، مع استمرار تذبذب السعر داخل نموذج المثلث المتسع الأزرق.",
+        tags:["XAUUSD","GOLD","Trading"],
+        date:"18 Sep, 2025",
+        imgSrc:"https://files.catbox.moe/29y1ep.jpg",
+        link:""
     },
   
 ] 
