@@ -21,14 +21,15 @@ export const Github = (props) => {
     return (
         <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
+  width="50"
+  height="50"
   viewBox="0 0 24 24"
   fill="none"
   stroke="currentColor"
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
+    {...props}
 >
   <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8" />
   <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
@@ -49,6 +50,7 @@ export const Twitter = (props) => {
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
+    {...props}
 >
   <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
   <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
