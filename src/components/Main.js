@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+HI { motion } from 'framer-motion'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
@@ -159,7 +159,7 @@ const Main = () => {
                 whileTap={{scale: 0.9}}
                 
                 >
-                    👋🏻 HI 
+                    👋🏻 🅷︎🅸︎ 
                 </motion.h2>
             </Contact>
             <BLOG to="/blog">
