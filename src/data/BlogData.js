@@ -11,7 +11,7 @@ export const Blogs = [
     },
     {
         id:2,
-        name:"•السعر عمل تصحيح (ABC) ونزل لمنطقة طلب قوية (OB + FVG).•	حصل تجميع بعدها وانطلاق قوي لفوق (اتجاه صاعد).•اي رجوع للدعم ممكن يكون فرصة شراء طالما مفيش كسر.",
+        name:"•السعر عمل تصحيح ونزل لمنطقة طلب قوية (OB + FVG).\n صل تجميع بعدها وانطلاق قوي لفوق (اتجاه صاعد)\n اي رجوع للدعم ممكن يكون فرصة شراء طالما مفيش كسر.",
         tags:["XAUUSD","GOLD","Trading"],
         date:"14 Oct, 2025",
         imgSrc:"https://files.catbox.moe/83q95r.jpg",
@@ -27,17 +27,19 @@ export const Blogs = [
     },
     {
         id:4,
-        name:"السعر كان طالع وبعدين وصل مقاومة وبدأ تصحيح هابط.حصل كسر بسيط لتحت وبعدها ارتداد (حركة سيولة).حالياً عرضي، ولو كسر تحت يكمل هبوط، ولو رجع فوق المقاومة يصعد تاني.",
-        tags:["XAUUSD","GOLD","Trading"],
+        name:"السعر كان طالع وبعدين وصل مقاومة وبدأ تصحيح هابط\n.حصل كسر بسيط لتحت وبعدها ارتداد (حركة سيولة)\n.حالياً عرضي، ولو كسر تحت يكمل هبوط، ولو رجع فوق المقاومة يصعد تاني.",
+        tags:["XAUUSD","GOLD","Trading     date:"7 Dec, 2025",
+,"Trading"],
         date:"7 Dec, 2025",
         imgSrc:"https://files.catbox.moe/6lm65i.jpg",
         link:""
     },
     {
         id:5,
-        name:"مراقبه السهم الذهب وتوقع \n عالي",
-        tags:["react","reactJS","web-development"],
-        date:"3 Feb, 2021",
+        name:"مراقبه السهم الذهب وتوقع عالي",
+        tags:["XAUUSD","GOLD","Trading"],
+  Feb, 2021",
+  date:"3 Feb, 2021",
         imgSrc:"https://codebucks.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1625295480148%2FlyKj8bpHK.jpeg%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
         link:"https://codebucks.hashnode.dev/what-is-higher-order-component"
     },
