@@ -1,148 +1,106 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import {lightTheme} from './Themes';
-import { Design, Develope} from './AllSvgs';
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import Me from '../assets/Images/profile-img.png'
 
+const Box = styled(motion.div)`
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
-import LogoComponent from '../subComponents/LogoComponent';
-import SocialIcons from '../subComponents/SocialIcons';
-import PowerButton from '../subComponents/PowerButton';
-import ParticleComponent from '../subComponents/ParticleComponent';
-import BigTitle from '../subComponents/BigTitlte'
+    width: 65vw;
+    height: 55vh;
+    display: flex;
 
-const Box = styled.div`
-background-color: ${props => props.theme.body};
-width: 100vw;
-height:100vh;
-position: relative;
-display: flex;
-justify-content: space-evenly;
-align-items: center;
+    background: linear-gradient(
+        to right,
+        ${props => props.theme.body} 50%,
+        ${props => props.theme.text} 50%) bottom,
+        linear-gradient(
+        to right,
+        ${props => props.theme.body} 50%,
+        ${props => props.theme.text} 50%) top;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    border-left: 2px solid ${props => props.theme.body};
+    border-right: 2px solid ${props => props.theme.text};
 
-
+    z-index: 1;
 `
 
-const Main = styled.div`
-border: 2px solid ${props => props.theme.text};
-color: ${props => props.theme.text};
-background-color: ${props => props.theme.body};
-padding: 2rem;
-width: 30vw;
-height: 60vh;
-z-index:3;
-line-height: 1.5;
-cursor: pointer;
+// تم تعديل justify-content لرفع النص للأعلى
+const SubBox = styled.div`
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start; /* التعديل هنا لرفع النص لفوق */
+    flex-direction: column; 
+`
 
-font-family: 'Ubuntu Mono',monospace;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-
-&:hover{
+const TextLeft = styled.div`
+    font-size: calc(1em + 1.5vw);
     color: ${props => props.theme.body};
-    background-color: ${props => props.theme.text};
-}
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
 `
 
-const Title = styled.h2`
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: calc(1em + 1vw);
+const TextRight = styled.div`
+    font-size: calc(1rem + 1.5vw);
+    color: ${props => props.theme.text};
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    z-index: 3;
+`
 
-${Main}:hover &{
-    &>*{
-        fill:${props => props.theme.body};
+const ImageContainer = styled(motion.div)`
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60%; 
+    height: auto;
+    z-index: 2;
+
+    .pic {
+        width: 100%;
+        height: auto;
     }
-}
-
-&>*:first-child{
-margin-right: 1rem;
-}
 `
 
-const Description = styled.div`
-color: ${props => props.theme.text};
-font-size: calc(0.6em + 1vw);
-padding: 0.5rem 0;
-
-
-${Main}:hover &{
-   
-        color:${props => props.theme.body};
-    
-}
-
-strong{
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-ul,p{
-    margin-left: 2rem;
-}
-`
-
-const MySkillsPage = () => {
+const Intro = () => {
     return (
-        <ThemeProvider theme={lightTheme}>
-<Box>
-
-<LogoComponent theme='light'/>
-<SocialIcons theme='light'/>
-<PowerButton />
-<ParticleComponent theme='light' />
-            <Main>
-<Title>
-    <Design width={40} height={40} /> Web Design
-</Title>
-<Description>
-أحب تصميم تصاميم تتحدث عن نفسها، مع الحرص على أن تكون نظيفة وبسيطة تلفت الانظار. 
-</Description>
-<Description>
-<strong>I like to Design</strong>
-<ul>
-    <li>
-        Web Design
-    </li>
-    <li>
-        Mobile Apps
-    </li>
-</ul>
-</Description>
-<Description>
-<strong>Tools</strong>
-<ul>
-    <li>
-       Figma
-    </li>
-    
-</ul>
-</Description>
-
-            </Main>
-            <Main>
-<Title>
-    <Develope width={40} height={40} /> Trading
-</Title>
-<Description>
-انا من عشاق مجال التداول ولدي خبره واسعه فيه وكيفيه دراسه الاسهم ومعرفه عمليات التداول الناجحه. 
-</Description>
-<Description>
-<strong>Tools</strong>
-<p>
-Stocks, Minerals, , Crypto, Tick Chart Trader, MT5, Bootstrap, Backtesting Platforms, Stock Screeners.
-</p>
-</Description>
-
-            </Main>
-
-            <BigTitle text="SKILLS" top="80%" right="30%" />
-
+        <Box
+        initial={{height:0}}
+        animate={{height: '55vh'}}
+        transition={{ type: 'spring', duration:2, delay:1 }}
+        >
+            <SubBox>
+                <TextLeft>
+                    <h1>Hi,</h1>
+                    <h3>I'm Carlos Misheil.</h3>
+                </TextLeft>
+            </SubBox>
+            
+            <ImageContainer
+                initial={{opacity:0}}
+                animate={{opacity: 1}}
+                transition={{ duration:1, delay:2 }}
+            >
+                <img className="pic" src={Me} alt="Profile Pic" />
+            </ImageContainer>
+            
+            <SubBox>
+                <TextRight>
+                    <h6>𝑰 𝒂𝒎 𝒂 𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒎𝒆𝒓 𝒂𝒏𝒅 𝒂 𝒕𝒓𝒂𝒅𝒆𝒓 𝒊𝒏 𝒕𝒉𝒆 𝒄𝒓𝒕𝒑𝒕𝒐 𝒎𝒂𝒓𝒌𝒆𝒕.</h6>
+                </TextRight>
+            </SubBox>
         </Box>
-
-        </ThemeProvider>
-        
     )
 }
 
-export default MySkillsPage
+export default Intro
