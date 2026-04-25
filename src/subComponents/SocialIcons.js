@@ -56,7 +56,7 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://www.instagram.com/carlos_alsfah_1"}
+          href={"https://www.instagram.com/carlos_misheil"}
         >
           <Twitter
             width={25}
