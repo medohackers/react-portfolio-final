@@ -9,8 +9,7 @@ const Box = styled(motion.div)`
     top: 50%;
     transform: translate(-50%, -50%);
 
-    /* كبرنا المربع حاجة بسيطة عشان ندي مساحة للكلام والصورة */
-    width: 65vw; 
+    width: 60vw; 
     height: 50vh; 
     display: flex;
 
@@ -39,7 +38,8 @@ const SubBox = styled.div`
     width: 50%;
     position: relative;
     display: flex;
-    justify-content: flex-start;
+    /* التعديل هنا: وسطنا الكلام عمودياً عشان ميبقاش لازق فوق */
+    justify-content: center; 
     flex-direction: column; 
 `
 
@@ -51,6 +51,11 @@ const TextLeft = styled.div`
     flex-direction: column;
     z-index: 3;
 
+    /* التعديل هنا: أبعدنا الكلام عن الصورة من ناحية اليمين في الشاشات الكبيرة */
+    @media (min-width: 769px) {
+        padding-right: 6vw; 
+    }
+
     @media (max-width: 768px) {
         padding: 1rem;
         font-size: calc(1em + 2vw);
@@ -60,21 +65,24 @@ const TextLeft = styled.div`
 const TextRight = styled.div`
     font-size: calc(1rem + 1.5vw);
     color: ${props => props.theme.text};
-    padding: 1rem;
+    padding: 2rem; /* كبرنا البادينج هنا سيكا عشان ميبقاش لازق في الخط */
     display: flex;
     flex-direction: column;
     font-weight: 300;
     z-index: 3;
 
-    /* زقينا الكلام لأقصى اليمين في اللاب توب عشان يبعد عن الصورة */
     width: 100%;
     align-items: flex-end;
     text-align: right;
 
+    /* التعديل هنا: أبعدنا الكلام عن الصورة من ناحية الشمال في الشاشات الكبيرة */
+    @media (min-width: 769px) {
+        padding-left: 6vw; 
+    }
+
     @media (max-width: 768px) {
         padding: 0.5rem;
         font-size: calc(1rem + 2vw);
-        /* رجعنا المحاذاة لليسار في الموبايل عشان نحافظ على شكله زي ما طلبت */
         align-items: flex-start;
         text-align: left;
     }
@@ -85,7 +93,6 @@ const ImageContainer = styled(motion.div)`
     bottom: 0; 
     left: 50%;
     transform: translate(-50%, 0);
-    /* قللنا طول الصورة سنة في اللاب عشان متكبرش وتدخل في الكلام */
     height: 85%; 
     display: flex;
     align-items: flex-end; 
@@ -107,7 +114,7 @@ const Intro = () => {
     return (
         <Box
         initial={{height:0}}
-        animate={{height: '50vh'}} /* التعديل هنا ليتناسب مع طول المربع الجديد */
+        animate={{height: '50vh'}}
         transition={{ type: 'spring', duration:2, delay:1 }}
         >
             <SubBox>
