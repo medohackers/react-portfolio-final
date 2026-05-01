@@ -9,8 +9,9 @@ const Box = styled(motion.div)`
     top: 50%;
     transform: translate(-50%, -50%);
 
-    width: 65vw;
-    height: 55vh;
+    /* التعديل هنا: قللنا العرض والطول عشان اللاب توب */
+    width: 55vw; 
+    height: 45vh; 
     display: flex;
 
     background: linear-gradient(
@@ -77,20 +78,20 @@ const ImageContainer = styled(motion.div)`
     bottom: 0; 
     left: 50%;
     transform: translate(-50%, 0);
-    height: 100%; /* التعديل الأهم: تحديد الطول عشان الصورة متخرجش برا */
+    height: 100%; 
     display: flex;
-    align-items: flex-end; /* عشان الصورة تثبت تحت */
+    align-items: flex-end; 
     z-index: 2;
 
     .pic {
-        max-height: 100%; /* عشان الصورة تحترم مساحة الكونتينر */
-        width: auto; /* عشان تحافظ على أبعاد الصورة ومتمطش */
+        max-height: 100%; 
+        width: auto; 
         max-width: 100%;
         object-fit: contain;
     }
 
     @media (max-width: 768px) {
-        height: 90%; /* تقليل حجم الصورة سيكا على الموبايل عشان تدي مساحة للكلام */
+        height: 90%; 
     }
 `
 
@@ -98,7 +99,7 @@ const Intro = () => {
     return (
         <Box
         initial={{height:0}}
-        animate={{height: '55vh'}}
+        animate={{height: '45vh'}} /* التعديل هنا كمان مهم جداً عشان الأنيميشن يقف عند الطول الجديد */
         transition={{ type: 'spring', duration:2, delay:1 }}
         >
             <SubBox>
