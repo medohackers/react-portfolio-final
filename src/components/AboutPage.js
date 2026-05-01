@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
 import {DarkTheme} from './Themes';
 
+
 import LogoComponent from '../subComponents/LogoComponent';
 import SocialIcons from '../subComponents/SocialIcons';
 import PowerButton from '../subComponents/PowerButton';
@@ -10,42 +11,30 @@ import BigTitle from '../subComponents/BigTitlte'
 import astronaut from '../assets/Images/spaceman.png'
 
 const Box = styled.div`
-  background-color: ${props => props.theme.body};
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+background-color: ${props => props.theme.body};
+width: 100vw;
+height:100vh;
+position: relative;
+overflow: hidden;
 `
-
 const float = keyframes`
-  0% { transform: translateY(-10px) }
-  50% { transform: translateY(15px) translateX(15px) }
-  100% { transform: translateY(-10px) }
-`
+0% { transform: translateY(-10px) }
+50% { transform: translateY(15px) translateX(15px) }
+100% { transform: translateY(-10px) }
 
+`
 const Spaceman = styled.div`
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 20vw;
-  animation: ${float} 4s ease infinite;
-
-  img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-  }
-
-  /* تظبيط الصورة على الموبايل */
-  @media (max-width: 768px) {
-      width: 40vw;
-      right: 10%;
-      top: 5%;
-      opacity: 0.4; /* قللنا الشفافية عشان لو جت ورا الكلام ما تغطيش عليه */
-  }
+position: absolute;
+top: 10%;
+right: 5%;
+width: 20vw;
+animation: ${float} 4s ease infinite;
+img{
+    width: 100%;
+    height: auto;
+}
 `
-
-const Main = styled.div`
+const Main =  styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   padding: 2rem;
@@ -57,54 +46,46 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   font-size: calc(0.6rem + 1vw);
-  backdrop-filter: blur(4px);
+ backdrop-filter: blur(4px);
+  
   position: absolute;
   left: calc(5rem + 5vw);
   top: 10rem;
   font-family: 'Ubuntu Mono', monospace;
   font-style: italic;
-
-  /* تظبيط المربع على اللاب توب والشاشات المتوسطة */
-  @media (max-width: 1024px) {
-      width: 60vw;
-      height: 50vh;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%); /* عشان نخليه في نص الشاشة بالظبط */
-  }
-
-  /* تظبيط المربع على الموبايل */
-  @media (max-width: 768px) {
-      width: 80vw;
-      height: auto; /* الارتفاع يبقى على حسب كمية الكلام */
-      padding: 1.5rem;
-  }
 `
+
+
+
 
 const AboutPage = () => {
     return (
         <ThemeProvider theme={DarkTheme}>
-            <Box>
-                <LogoComponent theme='dark'/>
-                <SocialIcons theme='dark'/>
-                <PowerButton />
-                <ParticleComponent theme='dark' />
+<Box>
 
-                <Spaceman>
-                    <img src={astronaut} alt="spaceman" />
-                </Spaceman>    
-                
-                <Main>
-                مرحبا انا كارلوس ميشيل مطور برامج ومصمم مواقع ويب احب البرمجه والعمل بها ولد شغف واسع للتطوير وتحويل الكلام لواقع مرئي وملموس من خلال بعض الاكواد البسيطه.
-                <br /> <br/>
-                ايضا انا متداول ولدي خبره واسعه في سوق الأسهم والعملات الرقميه.
-                <br/> <br/>
-                غير خبرتي في هذه المجالات لدي سابق معرفه في التعدين للعملات BTC و USDT و XAUUSD و TON الشهيره مثل
-                </Main>
+<LogoComponent theme='dark'/>
+<SocialIcons theme='dark'/>
+<PowerButton />
+<ParticleComponent theme='dark' />
 
-                <BigTitle text="ABOUT" top="10%" left="5%" />
-            </Box>
+        <Spaceman>
+            <img src={astronaut} alt="spaceman" />
+        </Spaceman>    
+        <Main>
+        مرحبا انا كارلوس ميشيل مطور برامج ومصمم مواقع ويب احب البرمجه والعمل بها ولد شغف واسع للتطوير وتحويل الكلام لواقع مرئي وملموس من خلال بعض الاكواد البسيطه.
+<br /> <br/>
+ايضا انا متداول ولدي خبره واسعه في سوق الأسهم والعملات الرقميه.
+<br/> <br/>
+غير خبرتي في هذه المجالات لدي سابق معرفه في التعدين للعملات  BTC و USDT و XAUUSD و TON الشهيره مثل
+        </Main>
+
+        <BigTitle text="ABOUT" top="10%" left="5%" />
+
+
+        </Box>
+
         </ThemeProvider>
+        
     )
 }
 
