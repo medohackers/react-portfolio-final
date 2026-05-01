@@ -10,7 +10,7 @@ const Box = styled(motion.div)`
     transform: translate(-50%, -50%);
 
     /* كبرنا المربع حاجة بسيطة عشان ندي مساحة للكلام والصورة */
-    width: 60vw; 
+    width: 65vw; 
     height: 50vh; 
     display: flex;
 
