@@ -50,6 +50,11 @@ const TextLeft = styled.div`
     flex-direction: column;
     z-index: 3;
 
+    @media (min-width: 769px) {
+        /* حددنا أقصى عرض عشان الكلام ميوصلش للصورة اللي في النص */
+        max-width: 75%; 
+    }
+
     @media (max-width: 768px) {
         padding: 1rem;
         font-size: calc(1em + 2vw);
@@ -62,18 +67,17 @@ const TextRight = styled.div`
     font-weight: 300;
     z-index: 3;
 
-    /* التعديل هنا: ثبتنا النص فوق على اليمين جوه المربع للاب توب */
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    text-align: right;
-    width: 85%;
+    @media (min-width: 769px) {
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+        text-align: right;
+        /* السر هنا: خلينا العرض 60% كحد أقصى عشان الكلام يتلم على اليمين وميخبطش في الصورة */
+        max-width: 60%; 
+    }
 
     @media (max-width: 768px) {
-        /* رجعنا كل حاجة لطبيعتها للموبايل عشان ميبوظش */
         position: relative;
-        top: auto;
-        right: auto;
         padding: 0.5rem;
         font-size: calc(1rem + 2vw);
         text-align: left;
