@@ -40,7 +40,6 @@ const SubBox = styled.div`
     display: flex;
     flex-direction: column; 
 
-    /* فصلنا التنسيق هنا: اللاب توب في النص، والموبايل يرجع فوق */
     @media (min-width: 769px) {
         justify-content: center; 
     }
@@ -63,8 +62,9 @@ const TextLeft = styled.div`
 
     @media (max-width: 768px) {
         padding: 1rem;
-        padding-top: 2rem; /* نزلناه سيكا عشان ميبقاش لازق في الخط اللي فوق */
-        font-size: calc(1em + 2vw);
+        padding-top: 1.5rem;
+        font-size: calc(1em + 1.2vw); /* صغرنا الخط سيكا عشان يلم */
+        box-sizing: border-box; /* عشان ميكبرش برا المربع */
     }
 `
 
@@ -85,10 +85,11 @@ const TextRight = styled.div`
     @media (max-width: 768px) {
         position: relative;
         padding: 1rem;
-        padding-top: 2rem; /* عشان يبقى موازي للنص اللي على الشمال في الموبايل */
-        font-size: calc(1rem + 2vw);
+        padding-top: 1.5rem;
+        font-size: calc(0.8rem + 1.2vw); /* صغرنا الخط سيكا */
         text-align: left;
         width: 100%;
+        box-sizing: border-box; /* ده اللي هيمنع النص إنه يخرج برا المربع الأبيض */
     }
 `
 
@@ -110,7 +111,8 @@ const ImageContainer = styled(motion.div)`
     }
 
     @media (max-width: 768px) {
-        height: 90%; 
+        /* قللنا طول الصورة عشان تنزل لتحت وتسيب مساحة للكلام فوقيها */
+        height: 65%; 
     }
 `
 
