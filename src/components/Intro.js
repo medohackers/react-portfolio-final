@@ -63,8 +63,8 @@ const TextLeft = styled.div`
     @media (max-width: 768px) {
         padding: 1rem;
         padding-top: 1.5rem;
-        font-size: calc(1em + 1.3vw); /* صغرنا الخط سيكا عشان يلم */
-        box-sizing: border-box; /* عشان ميكبرش برا المربع */
+        font-size: calc(1em + 1.2vw); 
+        box-sizing: border-box; 
     }
 `
 
@@ -86,10 +86,11 @@ const TextRight = styled.div`
         position: relative;
         padding: 1rem;
         padding-top: 1.5rem;
-        font-size: calc(0.8rem + 1.2vw); /* صغرنا الخط سيكا */
+        /* التعديل هنا: كبرنا الخط سيكا عشان يملى عينه وميضربش التصميم */
+        font-size: calc(1rem + 1.5vw); 
         text-align: left;
         width: 100%;
-        box-sizing: border-box; /* ده اللي هيمنع النص إنه يخرج برا المربع الأبيض */
+        box-sizing: border-box; 
     }
 `
 
@@ -104,47 +105,4 @@ const ImageContainer = styled(motion.div)`
     z-index: 2;
 
     .pic {
-        max-height: 100%; 
-        width: auto; 
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    @media (max-width: 768px) {
-        /* قللنا طول الصورة عشان تنزل لتحت وتسيب مساحة للكلام فوقيها */
-        height: 65%; 
-    }
-`
-
-const Intro = () => {
-    return (
-        <Box
-        initial={{height:0}}
-        animate={{height: '50vh'}}
-        transition={{ type: 'spring', duration:2, delay:1 }}
-        >
-            <SubBox>
-                <TextLeft>
-                    <h1>Hi,</h1>
-                    <h3>I'm Carlos Misheil.</h3>
-                </TextLeft>
-            </SubBox>
-            
-            <ImageContainer
-                initial={{opacity:0}}
-                animate={{opacity: 1}}
-                transition={{ duration:1, delay:2 }}
-            >
-                <img className="pic" src={Me} alt="Profile Pic" />
-            </ImageContainer>
-            
-            <SubBox>
-                <TextRight>
-                    <h6>𝑰 𝒂𝒎 𝒂 𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒎𝒆𝒓 𝒂𝒏𝒅 𝒂 𝒕𝒓𝒂𝒅𝒆𝒓 𝒊𝒏 𝒕𝒉𝒆 𝒄𝒓𝒚𝒑𝒕𝒐 𝒎𝒂𝒓𝒌𝒆𝒕.</h6>
-                </TextRight>
-            </SubBox>
-        </Box>
-    )
-}
-
-export default Intro
+        max-height: 100%;
