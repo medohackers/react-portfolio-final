@@ -27,14 +27,19 @@ const Box = styled(motion.div)`
     border-right: 2px solid ${props => props.theme.text};
 
     z-index: 1;
+
+    /* تظبيط المربع الأساسي للموبايل والتابلت */
+    @media (max-width: 768px) {
+        width: 85vw;
+        height: 65vh;
+    }
 `
 
-// تم تعديل justify-content لرفع النص للأعلى
 const SubBox = styled.div`
     width: 50%;
     position: relative;
     display: flex;
-    justify-content: flex-start; /* التعديل هنا لرفع النص لفوق */
+    justify-content: flex-start;
     flex-direction: column; 
 `
 
@@ -45,6 +50,11 @@ const TextLeft = styled.div`
     display: flex;
     flex-direction: column;
     z-index: 3;
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        font-size: calc(1em + 2vw);
+    }
 `
 
 const TextRight = styled.div`
@@ -55,6 +65,11 @@ const TextRight = styled.div`
     flex-direction: column;
     font-weight: 300;
     z-index: 3;
+
+    @media (max-width: 768px) {
+        padding: 0.5rem;
+        font-size: calc(1rem + 2vw);
+    }
 `
 
 const ImageContainer = styled(motion.div)`
@@ -62,13 +77,20 @@ const ImageContainer = styled(motion.div)`
     bottom: 0; 
     left: 50%;
     transform: translate(-50%, 0);
-    width: 60%; 
-    height: auto;
+    height: 100%; /* التعديل الأهم: تحديد الطول عشان الصورة متخرجش برا */
+    display: flex;
+    align-items: flex-end; /* عشان الصورة تثبت تحت */
     z-index: 2;
 
     .pic {
-        width: 100%;
-        height: auto;
+        max-height: 100%; /* عشان الصورة تحترم مساحة الكونتينر */
+        width: auto; /* عشان تحافظ على أبعاد الصورة ومتمطش */
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+        height: 90%; /* تقليل حجم الصورة سيكا على الموبايل عشان تدي مساحة للكلام */
     }
 `
 
@@ -96,7 +118,7 @@ const Intro = () => {
             
             <SubBox>
                 <TextRight>
-                    <h6>𝑰 𝒂𝒎 𝒂 𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒎𝒆𝒓 𝒂𝒏𝒅 𝒂 𝒕𝒓𝒂𝒅𝒆𝒓 𝒊𝒏 𝒕𝒉𝒆 𝒄𝒓𝒕𝒑𝒕𝒐 𝒎𝒂𝒓𝒌𝒆𝒕.</h6>
+                    <h6>𝑰 𝒂𝒎 𝒂 𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒎𝒆𝒓 𝒂𝒏𝒅 𝒂 𝒕𝒓𝒂𝒅𝒆𝒓 𝒊𝒏 𝒕𝒉𝒆 𝒄𝒓𝒚𝒑𝒕𝒐 𝒎𝒂𝒓𝒌𝒆𝒕.</h6>
                 </TextRight>
             </SubBox>
         </Box>
