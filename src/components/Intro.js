@@ -63,7 +63,7 @@ const TextLeft = styled.div`
     @media (max-width: 768px) {
         padding: 1rem;
         padding-top: 1.5rem;
-        font-size: calc(1em + 1.2vw); /* صغرنا الخط سيكا عشان يلم */
+        font-size: calc(1em + 1.3vw); /* صغرنا الخط سيكا عشان يلم */
         box-sizing: border-box; /* عشان ميكبرش برا المربع */
     }
 `
