@@ -38,7 +38,6 @@ const SubBox = styled.div`
     width: 50%;
     position: relative;
     display: flex;
-    /* التعديل هنا: وسطنا الكلام عمودياً عشان ميبقاش لازق فوق */
     justify-content: center; 
     flex-direction: column; 
 `
@@ -51,11 +50,6 @@ const TextLeft = styled.div`
     flex-direction: column;
     z-index: 3;
 
-    /* التعديل هنا: أبعدنا الكلام عن الصورة من ناحية اليمين في الشاشات الكبيرة */
-    @media (min-width: 769px) {
-        padding-right: 6vw; 
-    }
-
     @media (max-width: 768px) {
         padding: 1rem;
         font-size: calc(1em + 2vw);
@@ -65,26 +59,25 @@ const TextLeft = styled.div`
 const TextRight = styled.div`
     font-size: calc(1rem + 1.5vw);
     color: ${props => props.theme.text};
-    padding: 2rem; /* كبرنا البادينج هنا سيكا عشان ميبقاش لازق في الخط */
-    display: flex;
-    flex-direction: column;
     font-weight: 300;
     z-index: 3;
 
-    width: 100%;
-    align-items: flex-end;
+    /* التعديل هنا: ثبتنا النص فوق على اليمين جوه المربع للاب توب */
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     text-align: right;
-
-    /* التعديل هنا: أبعدنا الكلام عن الصورة من ناحية الشمال في الشاشات الكبيرة */
-    @media (min-width: 769px) {
-        padding-left: 6vw; 
-    }
+    width: 85%;
 
     @media (max-width: 768px) {
+        /* رجعنا كل حاجة لطبيعتها للموبايل عشان ميبوظش */
+        position: relative;
+        top: auto;
+        right: auto;
         padding: 0.5rem;
         font-size: calc(1rem + 2vw);
-        align-items: flex-start;
         text-align: left;
+        width: 100%;
     }
 `
 
