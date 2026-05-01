@@ -9,9 +9,9 @@ const Box = styled(motion.div)`
     top: 50%;
     transform: translate(-50%, -50%);
 
-    /* التعديل هنا: قللنا العرض والطول عشان اللاب توب */
-    width: 55vw; 
-    height: 45vh; 
+    /* كبرنا المربع حاجة بسيطة عشان ندي مساحة للكلام والصورة */
+    width: 60vw; 
+    height: 50vh; 
     display: flex;
 
     background: linear-gradient(
@@ -29,7 +29,6 @@ const Box = styled(motion.div)`
 
     z-index: 1;
 
-    /* تظبيط المربع الأساسي للموبايل والتابلت */
     @media (max-width: 768px) {
         width: 85vw;
         height: 65vh;
@@ -67,9 +66,17 @@ const TextRight = styled.div`
     font-weight: 300;
     z-index: 3;
 
+    /* زقينا الكلام لأقصى اليمين في اللاب توب عشان يبعد عن الصورة */
+    width: 100%;
+    align-items: flex-end;
+    text-align: right;
+
     @media (max-width: 768px) {
         padding: 0.5rem;
         font-size: calc(1rem + 2vw);
+        /* رجعنا المحاذاة لليسار في الموبايل عشان نحافظ على شكله زي ما طلبت */
+        align-items: flex-start;
+        text-align: left;
     }
 `
 
@@ -78,7 +85,8 @@ const ImageContainer = styled(motion.div)`
     bottom: 0; 
     left: 50%;
     transform: translate(-50%, 0);
-    height: 100%; 
+    /* قللنا طول الصورة سنة في اللاب عشان متكبرش وتدخل في الكلام */
+    height: 85%; 
     display: flex;
     align-items: flex-end; 
     z-index: 2;
@@ -99,7 +107,7 @@ const Intro = () => {
     return (
         <Box
         initial={{height:0}}
-        animate={{height: '45vh'}} /* التعديل هنا كمان مهم جداً عشان الأنيميشن يقف عند الطول الجديد */
+        animate={{height: '50vh'}} /* التعديل هنا ليتناسب مع طول المربع الجديد */
         transition={{ type: 'spring', duration:2, delay:1 }}
         >
             <SubBox>
